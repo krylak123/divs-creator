@@ -1,5 +1,8 @@
 let numberOfDiv = 1;
-let divSize =100;
+let divSize = 100;
+let fontSize = 30;
+let divSizeSpan = document.querySelector('[data-option="size"] span');
+divSizeSpan.textContent = divSize + "px";
 
 document.querySelector('button.add').addEventListener('click', () => {
     const div = document.createElement('div')
@@ -26,9 +29,11 @@ document.getElementById('size-up').addEventListener('click', () => {
         div.style.height = `${divSize}px`;
         div.style.lineHeight = `${divSize}px`;
     })
+    divSizeSpan.textContent = divSize + "px";
 })
 
 document.getElementById('size-down').addEventListener('click', () => {
+    if (divSize > 0) {
     const divs = document.querySelectorAll('.building div');
     divSize--;
     divs.forEach(div => {
@@ -36,4 +41,6 @@ document.getElementById('size-down').addEventListener('click', () => {
         div.style.height = `${divSize}px`;
         div.style.lineHeight = `${divSize}px`;
     })
+    divSizeSpan.textContent = divSize + "px";
+    } else alert("size 0px! It can't be less.");
 })

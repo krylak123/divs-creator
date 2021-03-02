@@ -39,6 +39,7 @@ section.controller {
 }
 
 section.building {
+    position: relative;
     flex-grow: 1;
     width: 0;
     margin: 10px;
@@ -117,6 +118,9 @@ section.controller h3+button {
 }
 
 section.building div {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
     margin: 5px;
     text-align: center;
     line-height: 100px;
