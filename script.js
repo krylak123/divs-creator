@@ -15,15 +15,15 @@ document.querySelector('button.add').addEventListener('click', () => {
 })
 
 document.querySelector('button.rem').addEventListener('click', () => {
-    if (document.querySelector('.building div:last-child') !== null){
-    document.querySelector('.building div:last-child').remove()
-    numberOfDiv--
+    if (document.querySelector('.building div:last-child') !== null) {
+        document.querySelector('.building div:last-child').remove()
+        numberOfDiv--
     }
 })
 
 document.getElementById('size-up').addEventListener('click', () => {
     const divs = document.querySelectorAll('.building div');
-    divSize++;
+    divSize += 5;
     divs.forEach(div => {
         div.style.width = `${divSize}px`;
         div.style.height = `${divSize}px`;
@@ -34,13 +34,13 @@ document.getElementById('size-up').addEventListener('click', () => {
 
 document.getElementById('size-down').addEventListener('click', () => {
     if (divSize > 0) {
-    const divs = document.querySelectorAll('.building div');
-    divSize--;
-    divs.forEach(div => {
-        div.style.width = `${divSize}px`;
-        div.style.height = `${divSize}px`;
-        div.style.lineHeight = `${divSize}px`;
-    })
-    divSizeSpan.textContent = divSize + "px";
+        const divs = document.querySelectorAll('.building div');
+        divSize -= 5;
+        divs.forEach(div => {
+            div.style.width = `${divSize}px`;
+            div.style.height = `${divSize}px`;
+            div.style.lineHeight = `${divSize}px`;
+        })
+        divSizeSpan.textContent = divSize + "px";
     } else alert("size 0px! It can't be less.");
 })
