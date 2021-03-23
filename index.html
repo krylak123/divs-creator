@@ -5,27 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Div's Creator</title>
 </head>
 
 <body>
     <div class="wrapper">
-        <section class="controller">
-            <h1>div's creator</h1>
-            <button class="add">Add div</button>
-            <button class="rem">Rem div</button>
-            <h2>Options:</h2>
-            <h3 data-option="size">Div size: <span></span></h3>
-            <button id="size-up">+</button>
-            <button id="size-down">-</button>
+        <section class="wrapper__controller controller">
+            <h1 class="controller__title">div's creator</h1>
+            <button class="controller__btn" id="addBtn">add div</button>
+            <button class="controller__btn" id="remBtn">remove div</button>
+            <div class="controller__options options">
+                <h2 class="controller__title options__title">Options</h2>
+                <h3 class="options__option">1. Size (currently: <span  id="spanSize"></span>)</h3>
+                <button class="options__btn" id="upSizeBtn"><i class="fas fa-plus"></i></button>
+                <button class="options__btn" id="downSizeBtn"><i class="fas fa-minus"></i></button>
+                <h3 class="options__option">2. Shape</h3>
+                <button class="controller__btn" id="shapeCircleBtn">Circle</button>
+                <button class="controller__btn" id="shapeSquareBtn">Square</button>
+            </div>
         </section>
-        <section class="building"></section>
-
-        <script src="script.js"></script>
+        <section class="wrapper__panel panel"></section>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
